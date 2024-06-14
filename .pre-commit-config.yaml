@@ -1,0 +1,57 @@
+repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v3.2.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: []
+
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.22.7
+    hooks:
+      - id: typos
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-xml
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args:
+          - "--baseline"
+          - ".secrets.baseline"
+          - "--exclude-files"
+          - '.*\.enc.yaml$'
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.3
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
+    hooks:
+      - id: forbid-crlf
+      - id: remove-crlf
+
+  - repo: https://github.com/tofuutils/pre-commit-opentofu
+    rev: v1.0.3
+    hooks:
+      - id: terragrunt_fmt
+      - id: tfupdate
+        name: Autoupdate Provider Lock
+        args:
+          - --args=lock
+          - --args=--platform linux_amd64
+          - --args=--platform darwin_amd64
+          - --args=--platform linux_arm64
+          - --args=--platform darwin_arm64

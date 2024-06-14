@@ -23,6 +23,7 @@ inputs = {
     "compute.googleapis.com",
     "oslogin.googleapis.com",
     "dns.googleapis.com",
+    "container.googleapis.com",
   ]
   disable_services_on_destroy = false
   disable_dependent_services  = false

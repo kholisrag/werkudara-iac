@@ -9,26 +9,21 @@ locals {
 }
 
 terraform {
-  source = format("%s/modules/opentofu/gcp/project-factory/project-services//15.0", get_repo_root())
+  source = format("%s/modules/opentofu/gcp/network/private-service-connect//9.1", get_repo_root())
 }
 
 include "parent" {
   path = find_in_parent_folders()
 }
 
+dependency "network" {
+  config_path = format("%s/../../vpc/vpc-prod-shared", get_terragrunt_dir())
+}
+
 inputs = {
-  project_id  = local.gcp_project_id
-  enable_apis = true
-  activate_apis = [
-    "compute.googleapis.com",
-    "oslogin.googleapis.com",
-    "dns.googleapis.com",
-    "container.googleapis.com",
-    "servicedirectory.googleapis.com",
-    "servicenetworking.googleapis.com",
-    "cloudidentity.googleapis.com",
-    "cloudresourcemanager.googleapis.com",
-  ]
-  disable_services_on_destroy = false
-  disable_dependent_services  = false
+  project_id                   = local.gcp_project_id
+  network_self_link            = dependency.network.outputs.gcp_network_vpc_output.network_self_link
+  private_service_connect_name = "global-psc-werkudara"
+  private_service_connect_ip   = "10.0.10.10"
+  forwarding_rule_target       = "all-apis"
 }

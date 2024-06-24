@@ -1,0 +1,24 @@
+owners:
+    - ENC[AES256_GCM,data:C4HDzpJGC+h6T235dr3g0dWxsMs=,iv:T9VDA5ENI1jGiFeOqQWcKY8jWdnhOlYTyXjZPXPwSbc=,tag:FmDsxbbmNSKrXpj9kHitzQ==,type:str]
+managers: []
+members: []
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age17nqlfm7qj72hgjfs82vqwcfatqymqngpwvp7v999crs2t5a6tu5sd0vcp9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBUSWJ5R2dWZ2tsSGpnMVlP
+            MThvYXJ0a0ZTajdSc3BWZzVZRlUzdnlLQUE0CjdCUWNSZ1NBbERnWTdFMTBUT1V3
+            WmNQNWdjbkRXbmdPbDlSRysyc1o5T28KLS0tIFhRUGN4RklwbEY0RVJjeFN5YlE2
+            cUFVckJLMVhWK29Pb3gxOFppeXF6dUkKWQqmFBR65h3Q2cnUC7w/b1qePwirByDr
+            E2GT5H4kW4w4rCPqFuUtg9iEU9XNpVQ42E7Azx1+1s1ueHNjioQ6lg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-06-22T06:24:35Z"
+    mac: ENC[AES256_GCM,data:mcw0qSRxCAZKS4vULUQVkjv7ro2TadF2tFK2PCkPqpQTTIStq9Y5diw7FOE58YLZc/c2q1E5ykkCppmNBYWsZ7ulywW7pH61HACnyHFoXTVdgMcJgjkqIPsU5GYQLXwlts/Uttt7cdUNOym2GSn5sAAqY2PeYYfs2Sfuymd4RI4=,iv:TLQicuAKDraieAhSclk/q1Gs4vUDKni2bpM+wAt5n3Q=,tag:ybjOlsRb7lfIb8rr7Y6oAA==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1

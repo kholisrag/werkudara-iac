@@ -38,9 +38,12 @@ temp/
 organization.yaml
 project.yaml
 folder.yaml
+groups.yaml
+
 
 # Terragrunt
 .terragrunt-cache/
+terragrunt-debug.tfvars.json
 
 # Ansible
 .ansible_vault_pass

@@ -53,7 +53,11 @@ inputs = {
     {
       display_name = "vpc-host-prod-werkudara-asia-southeast1"
       cidr_block   = dependency.network.outputs.gcp_network_vpc_output.subnets["asia-southeast1/prod-asia-southeast1"].ip_cidr_range
-    }
+    },
+    {
+      display_name = "internet"
+      cidr_block   = "0.0.0.0/0"
+    },
   ]
 
   ip_range_pods            = "gke-pods"
